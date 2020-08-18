@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace MakeMyTrip.Page
@@ -37,14 +39,17 @@ namespace MakeMyTrip.Page
 
         public void GoogleLogin()
         {
-            Thread.Sleep(2000);
             string mainWindow = driver.CurrentWindowHandle;          
             Thread.Sleep(3000);
             
             google.Click();
-            string loginwindow = driver.CurrentWindowHandle;
-            driver.SwitchTo().Window(loginwindow);           
-            Thread.Sleep(5000);
+            List<string> window = driver.WindowHandles.ToList();
+            foreach(var loginwindow in window)
+            {
+                driver.SwitchTo().Window(loginwindow);
+
+            }
+            Thread.Sleep(4000);
             
             gmail.SendKeys("rajkumar@gmail.com");
             Thread.Sleep(2000);            

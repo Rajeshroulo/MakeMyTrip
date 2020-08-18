@@ -1,5 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace MakeMyTrip.Page
@@ -16,35 +19,35 @@ namespace MakeMyTrip.Page
 
         [FindsBy(How = How.XPath, Using = "//nav//li[2]//a[1]")]
 
-        public IWebElement Hotels;
+        public IWebElement hotels;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[2]/div/div/div[2]/div/div/div[1]/label/span")]
 
-        public IWebElement City;
+        public IWebElement city;
 
         [FindsBy(How = How.XPath, Using = "//html//body//div//div//div//div//div//div//div//div//div//div//div//div//div//input")]
 
-        public IWebElement Search;
+        public IWebElement search;
 
         [FindsBy(How = How.XPath, Using = "//li[1]//div[1]//div[1]//div[1]//p[1]")]
 
-        public IWebElement MumbaiValue;
+        public IWebElement mumbaiValue;
 
         [FindsBy(How = How.XPath, Using = "//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[1]//div[3]//div[5]//div[3]")]
        
-        public IWebElement Start;
+        public IWebElement start;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div/div/div[2]/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div[3]/div[5]/div[7]")]
        
-        public IWebElement End;
+        public IWebElement end;
 
         [FindsBy(How = How.XPath, Using = "//button[@id='hsw_search_button']")]
 
-        public IWebElement SearchButton;
+        public IWebElement searchButton;
 
         [FindsBy(How = How.XPath, Using = "//div[@id='hlistpg_search_htl_name_box']//div//input")]
 
-        public IWebElement SearchHotel;
+        public IWebElement searchHotel;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'The Taj Mahal Palace, Mumbai, Maharashtra')]")]
 
@@ -52,30 +55,47 @@ namespace MakeMyTrip.Page
 
         [FindsBy(How = How.XPath, Using = "//body/div/div/div/div/div/div/div/div/div[2]/a[1]/div[1]/div[1]")]
        
-        public IWebElement Taj;
+        public IWebElement taj;
+        
+        [FindsBy(How = How.XPath, Using = "//h1[@id='detpg_hotel_name']")]
+
+        public IWebElement tajName;
+
 
         public void HotelSelect()
         {
-            Hotels.Click();
-            Thread.Sleep(10000);
-            City.Click();
+            hotels.Click();
+            Thread.Sleep(8000);
+            city.Click();
             Thread.Sleep(3000);
-            Search.SendKeys("Mumbai");
-            Thread.Sleep(3000);
-            MumbaiValue.Click();
-            Thread.Sleep(3000);
-            Start.Click();
-            End.Click();
-            Thread.Sleep(3000);
-            SearchButton.Click();
+            search.SendKeys("Mumbai");
             Thread.Sleep(5000);
-            SearchHotel.SendKeys("Taj Mahal palace");
-            Thread.Sleep(2000);
+            mumbaiValue.Click();
+            Thread.Sleep(3000);
+            start.Click();
+            end.Click();
+            Thread.Sleep(3000);
+            searchButton.Click();
+            Thread.Sleep(3000);
+            searchHotel.SendKeys("Taj Mahal palace");
+            Thread.Sleep(5000);
             tajSelect.Click();
             Thread.Sleep(3000);
-            Taj.Click();
-            Thread.Sleep(3000);
+            taj.Click();
+            Thread.Sleep(5000);
 
+            List<string> windows = driver.WindowHandles.ToList();
+
+            foreach(var hotelwindow in windows)
+            {
+                driver.SwitchTo().Window(hotelwindow);
+            }
+
+        }
+
+        public string TajHotel()
+        {
+            return tajName.Text;
         }
 
     }
