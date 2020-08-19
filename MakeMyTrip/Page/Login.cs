@@ -3,20 +3,20 @@ using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.IO;
+
 
 namespace MakeMyTrip.Page
 {
     public class Login
     {
         public IWebDriver driver;
-
         public Login(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
-       
-        
+              
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/div[1]/div[1]/div[1]/ul/li[6]/div[3]/div/div[1]/div[2]")]
 
         public IWebElement google;
@@ -31,13 +31,13 @@ namespace MakeMyTrip.Page
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input")]
 
-        public IWebElement password;
+        public IWebElement pass;
 
         [FindsBy(How = How.XPath, Using = "//*[@id='passwordNext']/div/button/div[2]")]
 
         public IWebElement enter;
 
-        public void GoogleLogin()
+        public void GoogleLogin(string email,string password)
         {
             string mainWindow = driver.CurrentWindowHandle;          
             Thread.Sleep(3000);
@@ -51,17 +51,17 @@ namespace MakeMyTrip.Page
             }
             Thread.Sleep(4000);
             
-            gmail.SendKeys("rajkumar@gmail.com");
+            gmail.SendKeys(email);
             Thread.Sleep(2000);            
             next.Click();
             Thread.Sleep(4000);           
-            password.SendKeys("Rajesh");
+            pass.SendKeys(password);
             Thread.Sleep(3000);          
             enter.Click();
             Thread.Sleep(5000);
            
             driver.SwitchTo().Window(mainWindow);
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
         }
 
     }

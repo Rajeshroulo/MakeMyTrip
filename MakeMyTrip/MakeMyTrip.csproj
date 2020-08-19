@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\MMTBase.cs" />
+    <Compile Include="Data\UserData.cs" />
     <Compile Include="Page\Hotel.cs" />
     <Compile Include="Page\Login.cs" />
     <Compile Include="Program.cs" />

@@ -1,14 +1,18 @@
 ﻿using MakeMyTrip.Base;
+using MakeMyTrip.Data;
 using MakeMyTrip.Page;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Threading;
+using System.IO;
+
 
 namespace MakeMyTrip.Test
 {
     public class MMTHome : MMTBase
     {
+        UserData data = new UserData();
 
         [Test,Order(1)]
         public void Loginmmt()
@@ -16,7 +20,7 @@ namespace MakeMyTrip.Test
             try
             {
                 var login = new Login(driver);
-                login.GoogleLogin();
+                login.GoogleLogin(data.email, data.password);
 
                 string title = "MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday";
                 Assert.AreEqual(title, driver.Title);
@@ -26,7 +30,7 @@ namespace MakeMyTrip.Test
             catch(Exception e)
             {
                 Console.WriteLine(e.StackTrace);
-                throw;
+                
             }
             
         }
@@ -46,11 +50,7 @@ namespace MakeMyTrip.Test
 
             catch(Exception e)
             {
-                ITakesScreenshot sc = driver as ITakesScreenshot;
-                Screenshot st = sc.GetScreenshot();
-                st.SaveAsFile(@"C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\Page\Hotel.cs\\hotel.jpeg", ScreenshotImageFormat.Jpeg);
-                Console.WriteLine(e.StackTrace);
-                throw;
+               Console.WriteLine(e.StackTrace);
             }
 
         }

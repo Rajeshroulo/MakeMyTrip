@@ -4,6 +4,8 @@ using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.IO;
+
 
 namespace MakeMyTrip.Page
 {
@@ -64,8 +66,9 @@ namespace MakeMyTrip.Page
 
         public void HotelSelect()
         {
+            Thread.Sleep(3000);
             hotels.Click();
-            Thread.Sleep(8000);
+            Thread.Sleep(6000);
             city.Click();
             Thread.Sleep(3000);
             search.SendKeys("Mumbai");
