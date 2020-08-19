@@ -52,10 +52,10 @@ namespace MakeMyTrip.Page
 
         public void FlightBooking()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             from.Click();
             fromcity.SendKeys("Visakhapatnam");
-            Thread.Sleep(8000);
+            Thread.Sleep(7000);
             vkp.Click();
             to.Click();
             tocity.SendKeys("Delhi");

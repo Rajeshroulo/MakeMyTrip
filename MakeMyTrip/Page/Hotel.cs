@@ -71,19 +71,25 @@ namespace MakeMyTrip.Page
         {
             Thread.Sleep(3000);
             hotels.Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(7000);
             city.Click();
-            Thread.Sleep(3000);
+            log.Info("Enter city name");
             search.SendKeys("Mumbai");
             Thread.Sleep(5000);
-            log.Info("Enter city name");
             mumbaiValue.Click();
             start.Click();
             log.Info("Select the dates for staying in hotel ");
-            end.Click();
+            end.Click();                       
             searchButton.Click();
-            searchHotel.SendKeys("Taj Mahal palace");
+                        
+        }
+
+
+        public void SearchHotel()
+        {
+            Thread.Sleep(3000);
             log.Info("Enter the Hotel name");
+            searchHotel.SendKeys("Taj Mahal palace");
             Thread.Sleep(5000);
             tajSelect.Click();
             Thread.Sleep(3000);
@@ -91,7 +97,7 @@ namespace MakeMyTrip.Page
 
             List<string> windows = driver.WindowHandles.ToList();
 
-            foreach(var hotelwindow in windows)
+            foreach (var hotelwindow in windows)
             {
                 driver.SwitchTo().Window(hotelwindow);
             }

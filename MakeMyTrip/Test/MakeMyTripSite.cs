@@ -6,11 +6,11 @@ using OpenQA.Selenium;
 using System;
 using System.Threading;
 using System.IO;
-
+using MakeMyTrip.exception;
 
 namespace MakeMyTrip.Test
 {
-    public class MMTSite : MMTrip
+    public class MakeMyTripSite : Base.MakeMyTrip
     {
         UserData data = new UserData();
 
@@ -38,8 +38,20 @@ namespace MakeMyTrip.Test
         [Test,Order(2)]
         public void FlightSearch()
         {
-            var flight = new Flights(driver);
-            flight.FlightBooking();
+            try
+            {
+                var flight = new Flights(driver);
+                flight.FlightBooking();
+
+                string title = "Makemytrip";
+                Assert.AreEqual(title, driver.Title);
+            }
+
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
         }
              
         [Test,Order(3)]
@@ -49,6 +61,7 @@ namespace MakeMyTrip.Test
             {
                 var hotel = new Hotel(driver);
                 hotel.HotelSelect();
+                hotel.SearchHotel();
 
                 string name = "The Taj Mahal Palace";
                 Assert.AreEqual(name, hotel.TajHotel());

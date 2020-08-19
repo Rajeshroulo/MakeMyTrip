@@ -6,7 +6,7 @@ using System.IO;
 
 namespace MakeMyTrip.Base
 {
-    public class MMTrip
+    public class MakeMyTrip
     {
         public IWebDriver driver; 
         [OneTimeSetUp]
@@ -21,7 +21,7 @@ namespace MakeMyTrip.Base
         [OneTimeTearDown]
         public void CloseBrowser()
         {
-      //      driver.Quit();
+            driver.Quit();
         }
 
     }
