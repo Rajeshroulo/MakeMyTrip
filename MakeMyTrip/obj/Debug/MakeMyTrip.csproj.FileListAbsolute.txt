@@ -20,4 +20,6 @@ C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\nunit.engine.core.dll
 C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\SeleniumExtras.PageObjects.dll
 C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\Newtonsoft.Json.dll
 C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\log4net.dll
+C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\log4net.xml
 C:\Users\HP\source\repos\MakeMyTrip\MakeMyTrip\obj\Debug\MakeMyTrip.csprojAssemblyReference.cache

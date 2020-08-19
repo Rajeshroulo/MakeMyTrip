@@ -10,12 +10,12 @@ using System.IO;
 
 namespace MakeMyTrip.Test
 {
-    public class MMTHome : MMTBase
+    public class MMTSite : MMTrip
     {
         UserData data = new UserData();
 
         [Test,Order(1)]
-        public void Loginmmt()
+        public void AccountLogin()
         {
             try
             {
@@ -36,7 +36,7 @@ namespace MakeMyTrip.Test
         }
              
         [Test,Order(2)]
-        public void HotelSelection()
+        public void SelectHotel()
         {
             try
             {
@@ -50,7 +50,7 @@ namespace MakeMyTrip.Test
 
             catch(Exception e)
             {
-               Console.WriteLine(e.StackTrace);
+                  Console.WriteLine(e.StackTrace);
             }
 
         }

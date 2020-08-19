@@ -5,13 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.IO;
-
+using log4net;
 
 namespace MakeMyTrip.Page
 {
     public class Hotel
     {
         public IWebDriver driver;
+        
+        ILog log = LogManager.GetLogger(typeof(Program));
+
 
         public Hotel(IWebDriver driver)
         {
@@ -68,24 +71,23 @@ namespace MakeMyTrip.Page
         {
             Thread.Sleep(3000);
             hotels.Click();
-            Thread.Sleep(6000);
+            Thread.Sleep(5000);
             city.Click();
             Thread.Sleep(3000);
             search.SendKeys("Mumbai");
             Thread.Sleep(5000);
+            log.Info("Enter city name");
             mumbaiValue.Click();
-            Thread.Sleep(3000);
             start.Click();
+            log.Info("Select the dates for staying in hotel ");
             end.Click();
-            Thread.Sleep(3000);
             searchButton.Click();
-            Thread.Sleep(3000);
             searchHotel.SendKeys("Taj Mahal palace");
+            log.Info("Enter the Hotel name");
             Thread.Sleep(5000);
             tajSelect.Click();
             Thread.Sleep(3000);
             taj.Click();
-            Thread.Sleep(5000);
 
             List<string> windows = driver.WindowHandles.ToList();
 

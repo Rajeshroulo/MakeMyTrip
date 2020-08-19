@@ -6,7 +6,7 @@ using System.IO;
 
 namespace MakeMyTrip.Base
 {
-    public class MMTBase
+    public class MMTrip
     {
         public IWebDriver driver; 
         [OneTimeSetUp]

@@ -52,16 +52,13 @@ namespace MakeMyTrip.Page
             Thread.Sleep(4000);
             
             gmail.SendKeys(email);
-            Thread.Sleep(2000);            
             next.Click();
-            Thread.Sleep(4000);           
+            Thread.Sleep(3000);           
             pass.SendKeys(password);
-            Thread.Sleep(3000);          
             enter.Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
            
             driver.SwitchTo().Window(mainWindow);
-            Thread.Sleep(5000);
         }
 
     }
