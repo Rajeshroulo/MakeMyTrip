@@ -34,8 +34,15 @@ namespace MakeMyTrip.Test
             }
             
         }
-             
+
         [Test,Order(2)]
+        public void FlightSearch()
+        {
+            var flight = new Flights(driver);
+            flight.FlightBooking();
+        }
+             
+        [Test,Order(3)]
         public void SelectHotel()
         {
             try
@@ -53,7 +60,7 @@ namespace MakeMyTrip.Test
                   Console.WriteLine(e.StackTrace);
             }
 
-        }
+        } 
 
     }
 }

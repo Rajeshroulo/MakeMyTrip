@@ -24,8 +24,8 @@ namespace MakeMyTrip.Page
 
         public IWebElement from;
 
-        [FindsBy(How = How.XPath, Using = "//html//body//div//div//div//div//div//div//div//div//div//div//div//div//input")]
-
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='From']")]
+       
         public IWebElement fromcity;
 
         [FindsBy(How = How.XPath, Using = "//p[contains(text(),'Visakhapatnam, India')]")]
@@ -36,7 +36,7 @@ namespace MakeMyTrip.Page
 
         public IWebElement to;
 
-        [FindsBy(How = How.XPath, Using = "//html//body//div//div//div//div//div//div//div//div//div//div//div//div//input")]
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='To']")]
 
         public IWebElement tocity;
 
@@ -44,10 +44,7 @@ namespace MakeMyTrip.Page
 
         public IWebElement del;
 
-        [FindsBy(How = How.XPath, Using = "//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[1]//div[3]//div[2]//div[5]")]
-
-        public IWebElement depart;
-
+        
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Search')]")]
 
         public IWebElement serach;
@@ -55,22 +52,18 @@ namespace MakeMyTrip.Page
 
         public void FlightBooking()
         {
+            Thread.Sleep(3000);
             from.Click();
-            Thread.Sleep(3000);
             fromcity.SendKeys("Visakhapatnam");
-            Thread.Sleep(6000);
+            Thread.Sleep(8000);
             vkp.Click();
-            Thread.Sleep(3000);
             to.Click();
-            Thread.Sleep(3000);
             tocity.SendKeys("Delhi");
-            Thread.Sleep(6000);
+            Thread.Sleep(5000);
             del.Click();
-            Thread.Sleep(2000);
-            depart.Click();
-            Thread.Sleep(2000);
+
             serach.Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
         }
 
