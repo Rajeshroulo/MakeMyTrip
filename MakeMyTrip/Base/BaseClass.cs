@@ -6,7 +6,7 @@ using System.IO;
 
 namespace MakeMyTrip.Base
 {
-    public class MakeMyTrip
+    public class BaseClass
     {
         public IWebDriver driver; 
         [OneTimeSetUp]
@@ -23,6 +23,5 @@ namespace MakeMyTrip.Base
         {
             driver.Quit();
         }
-
     }
 }

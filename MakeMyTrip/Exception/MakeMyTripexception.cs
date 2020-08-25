@@ -8,7 +8,7 @@ namespace MakeMyTrip.exception
 
         public enum ExceptionType
         {
-            ELEMENT_NOT_FOUND,TIMED_OUT
+            INVOCATION_ERROR
         }
         public  ExceptionType type;
 
@@ -17,6 +17,5 @@ namespace MakeMyTrip.exception
             this.type = type;
             this.message = message;
         }
-
     }
 }

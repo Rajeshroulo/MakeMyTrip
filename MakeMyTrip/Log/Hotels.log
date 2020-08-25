@@ -1,14 +1,3 @@
-﻿2020-08-19 12:30:51,954 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter city name
-2020-08-19 12:30:56,577 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Select the dates for staying in hotel 
-2020-08-19 12:31:18,686 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter the Hotel name
-2020-08-19 15:31:14,626 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter city name
-2020-08-19 15:31:15,558 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Select the dates for staying in hotel 
-2020-08-19 15:31:28,442 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter the Hotel name
-2020-08-19 18:56:50,446 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter city name
-2020-08-19 18:56:51,359 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Select the dates for staying in hotel 
-2020-08-19 18:57:01,632 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter the Hotel name
-2020-08-19 19:06:46,894 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter city name
-2020-08-19 19:06:47,524 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Select the dates for staying in hotel 
-2020-08-19 19:06:58,092 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter the Hotel name
-2020-08-19 21:36:37,391 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter city name
-2020-08-19 21:42:44,580 INFO [NonParallelWorker] MakeMyTrip.Page.Hotel.HotelSelect - Enter city name
+﻿2020-08-25 09:59:36,142 INFO [NonParallelWorker] MakeMyTrip.Page.HotelPage.HotelSelect - Enter city name
+2020-08-25 09:59:45,402 INFO [NonParallelWorker] MakeMyTrip.Page.HotelPage.HotelSelect - Select the dates for staying in hotel 
+2020-08-25 09:59:54,065 INFO [NonParallelWorker] MakeMyTrip.Page.HotelPage.SearchHotel - Enter the Hotel name

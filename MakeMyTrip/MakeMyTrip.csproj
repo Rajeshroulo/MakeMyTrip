@@ -66,15 +66,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\MakeMyTrip.cs" />
+    <Compile Include="Base\BaseClass.cs" />
     <Compile Include="Data\UserData.cs" />
-    <Compile Include="Exception\MakeMyTripexception.cs" />
-    <Compile Include="Page\Flights.cs" />
-    <Compile Include="Page\Hotel.cs" />
-    <Compile Include="Page\Login.cs" />
+    <Compile Include="Exception\MakeMyTripException.cs" />
+    <Compile Include="Pages\FlightsPage.cs" />
+    <Compile Include="Pages\HotelPage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\TrainsPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\MakeMyTripSite.cs" />
+    <Compile Include="Test\MakeMyTripTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

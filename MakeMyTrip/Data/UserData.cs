@@ -19,6 +19,5 @@ namespace MakeMyTrip.Data
             email = b["email"]; 
             password = b["password"];
         } 
-
     }
 }
