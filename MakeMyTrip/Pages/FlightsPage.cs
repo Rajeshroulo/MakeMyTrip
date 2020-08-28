@@ -18,19 +18,19 @@ namespace MakeMyTrip.Page
         public IWebElement from;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='From']")]       
-        public IWebElement fromcity;
+        public IWebElement fromCity;
 
         [FindsBy(How = How.XPath, Using = "//p[contains(text(),'Visakhapatnam, India')]")]
-        public IWebElement vkp;
+        public IWebElement vizag;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'To')]")]
         public IWebElement to;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='To']")]
-        public IWebElement tocity;
+        public IWebElement toCity;
 
         [FindsBy(How = How.XPath, Using = "//p[contains(text(),'Delhi, India')]")]
-        public IWebElement del;
+        public IWebElement delhi;
         
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Search')]")]
         public IWebElement serach;
@@ -39,13 +39,13 @@ namespace MakeMyTrip.Page
         {
             Thread.Sleep(6000);
             from.Click();
-            fromcity.SendKeys("Visakhapatnam");
+            fromCity.SendKeys("Visakhapatnam");
             Thread.Sleep(6000);
-            vkp.Click();
+            vizag.Click();
             to.Click();          
-            tocity.SendKeys("Delhi");
+            toCity.SendKeys("Delhi");
             Thread.Sleep(5000);
-            del.Click();
+            delhi.Click();
             serach.Click();
             Thread.Sleep(5000);
         }

@@ -6,7 +6,6 @@ namespace MakeMyTrip.Page
 {
     public class TrainsPage
     {
-
         public IWebDriver driver;
 
         public TrainsPage(IWebDriver driver)
@@ -22,22 +21,25 @@ namespace MakeMyTrip.Page
         public IWebElement from;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='From']")]
-        public IWebElement fromcity;
+        public IWebElement fromCity;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Ichchpuram Railway Station')]")]
-        public IWebElement ipm;
+        public IWebElement ichapuram; 
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'To')]")]
         public IWebElement to;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='To']")]
-        public IWebElement tocity;
+        public IWebElement toCity;
 
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'New Delhi Railway Station')]")]
-        public IWebElement del;
+        public IWebElement delhi; 
       
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Search')]")]
         public IWebElement search;
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='rajraval017@gmail.com']")]
+        public IWebElement mail;
 
         public void FindTrains()
         {
@@ -46,16 +48,21 @@ namespace MakeMyTrip.Page
             Thread.Sleep(4000);
             string mainWindow = driver.CurrentWindowHandle;
             from.Click();
-            fromcity.SendKeys("Ichapuram");
+            fromCity.SendKeys("Ichapuram");
             Thread.Sleep(5000);
-            ipm.Click();
+            ichapuram.Click();
             to.Click();
             driver.SwitchTo().Window(mainWindow);
-            tocity.SendKeys("Delhi");
+            toCity.SendKeys("Delhi");
             Thread.Sleep(4000);
-            del.Click();
+            delhi.Click();
             search.Click();
-            Thread.Sleep(3000);
-        }    
+            Thread.Sleep(5000);
+        } 
+        
+        public string MailId()
+        {
+            return mail.Text;
+        }
     }
 }

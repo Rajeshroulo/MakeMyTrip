@@ -1,11 +1,11 @@
 ﻿using MakeMyTrip.Data;
 using MakeMyTrip.Page;
 using NUnit.Framework;
-using MakeMyTrip.exception;
+using MakeMyTrip.Base;
 
 namespace MakeMyTrip.Test
 {
-    public class MakeMyTripTests : Base.BaseClass
+    public class MakeMyTripTests : BaseClass
     {
         UserData data = new UserData();
 
@@ -25,7 +25,7 @@ namespace MakeMyTrip.Test
              flight.FlightBooking();
              string title = "Makemytrip";
              Assert.AreEqual(title, driver.Title);            
-        }
+        } 
              
         [Test,Order(3)]
         public void SelectHotel()
@@ -35,20 +35,15 @@ namespace MakeMyTrip.Test
              hotel.SearchHotel();
              string name = "The Taj Mahal Palace";
              Assert.AreEqual(name, hotel.TajHotel());            
-        }
+        }  
         
         [Test,Order(4)]
         public void SearchTrains()
-        {
-            try
-            {
-                var trains = new TrainsPage(driver);
-                trains.FindTrains();
-            }
-            catch(MakeMyTripexception mae)
-            {
-                Assert.AreEqual(MakeMyTripexception.ExceptionType.INVOCATION_ERROR, "Unexpected window appeared");
-            }
-        }
+        {           
+             var trains = new TrainsPage(driver);
+             trains.FindTrains();
+             string mailId = "rajraval017@gmail.com";
+             Assert.AreEqual(mailId, trains.MailId());
+        } 
     }
 }

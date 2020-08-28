@@ -30,10 +30,10 @@ namespace MakeMyTrip.Page
         [FindsBy(How = How.XPath, Using = "//li[1]//div[1]//div[1]//div[1]//p[1]")]
         public IWebElement mumbaiValue;
 
-        [FindsBy(How = How.XPath, Using = "//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div[1]//div[3]//div[5]//div[3]")]       
+        [FindsBy(How = How.XPath, Using = "//div[@class='DayPicker-Day'][contains(text(),'25')]")]
         public IWebElement start;
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div/div/div[2]/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div[3]/div[5]/div[7]")]       
+        [FindsBy(How = How.XPath, Using = "//div[@class='DayPicker-Months']//div[2]//div[3]//div[5]//div[4]")]
         public IWebElement end;
 
         [FindsBy(How = How.XPath, Using = "//button[@id='hsw_search_button']")]
@@ -53,9 +53,9 @@ namespace MakeMyTrip.Page
 
         public void HotelSelect()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(8000);
             hotels.Click();
-            Thread.Sleep(10000);
+            Thread.Sleep(7000);
             city.Click();
             log.Info("Enter city name");
             Thread.Sleep(3000);          
@@ -73,15 +73,16 @@ namespace MakeMyTrip.Page
             Thread.Sleep(3000);
             log.Info("Enter the Hotel name");
             searchHotel.SendKeys("Taj Mahal palace");
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
             tajSelect.Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(7000);
             taj.Click();
             List<string> windows = driver.WindowHandles.ToList();
             foreach (var hotelwindow in windows)
             {
                 driver.SwitchTo().Window(hotelwindow);
             }
+            Thread.Sleep(7000);
         }
 
         public string TajHotel()

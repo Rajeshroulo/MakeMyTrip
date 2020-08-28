@@ -33,7 +33,7 @@ namespace MakeMyTrip.Page
         public void GoogleLogin(string email,string password)
         {
             string mainWindow = driver.CurrentWindowHandle;          
-            Thread.Sleep(8000);            
+            Thread.Sleep(10000);            
             google.Click();
             List<string> window = driver.WindowHandles.ToList();
             foreach(var loginwindow in window)
@@ -41,7 +41,7 @@ namespace MakeMyTrip.Page
                 driver.SwitchTo().Window(loginwindow);
 
             }
-            Thread.Sleep(6000);            
+            Thread.Sleep(8000);            
             gmail.SendKeys(email);
             next.Click();
             Thread.Sleep(3000);           
